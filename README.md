@@ -1,5 +1,5 @@
 # macro-counter
-Using LLM to count macro nutrients
+Using LLMs to count macro nutrients (macros)
 
 
 ## Setup
@@ -16,12 +16,24 @@ python download_models.py
 python function_calling_food.py
 ```
 
+### TODO
+
+- [x] Parse recipes from the web
+- [x] Parse strings to pint quantities
+- [ ] Get macro values for each ingredient
+- [ ] Calculate macro needs based on height, weight, age and goals (loose weight, build muscle, maintain)
+- [ ] Create meal plan for individual based on recipes and macro requirements
+- [ ] Create meal plan for groups of people
+- [ ] Create shopping list based meal plan
+- [ ] Calculate prices using grocery stores' APIs 
+
 ### Built using
 
 - [USDA FoodData Central API](https://fdc.nal.usda.gov/api-guide.html): `U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov.`
 - [llama-cpp-python](https://github.com/abetlen/llama-cpp-python/tree/main) for serving the LLM backends, function calling
 - [pydantic](https://docs.pydantic.dev/latest/) for object orientation and typing
 - [instructor](https://jxnl.github.io/instructor/) for generating instances of pydantic models using LLM's
+- [pint](https://pint.readthedocs.io/en/stable/) for unit conversion
 
 ### See Also
 
