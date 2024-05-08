@@ -4,7 +4,7 @@ import fooddatacentral as fdc
 import os
 from dotenv import load_dotenv
 load_dotenv()
-api_key = os.getenv("FOOD_DATA_CENTRAL_API_KEY")
+api_key = os.getenv("FOOD_DATA_CENTRAL_API_KEY") # get the API key from the .env file
 
 results_df = fdc.search(api_key,"crunchy peanut butter")
 
@@ -12,4 +12,4 @@ results_df = fdc.search(api_key,"crunchy peanut butter")
 print(results_df.head())
 
 # get the brandOwner of the first result
-print(results_df.iloc[:].brandOwner)
+# print(results_df.iloc[:].brandOwner)

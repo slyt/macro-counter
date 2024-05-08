@@ -6,6 +6,8 @@ Using LLMs to count macro nutrients (macros)
 
 Tested using Nvidia GPU for acceleration. If using Nvidia, ensure you have compatible CUDA runtime (run `nvidid-smi`) and CUDA toolkit (run `nvcc --version`) installed for building llama-cpp-python.
 
+Copy `.env_example` to `.env` and put in your API key from [FoodData Central](https://fdc.nal.usda.gov/api-key-signup.html)
+
 ```sh
 python -m venv env
 source env/bin/activate
@@ -13,7 +15,7 @@ pip install -r requirements.txt
 CMAKE_ARGS="-DLLAMA_CUDA=on" pip install llama-cpp-python --force-reinstall --no-cache-dir
 python download_models.py
 ./start_server.sh &
-python function_calling_food.py
+python main.py
 ```
 
 ### TODO
