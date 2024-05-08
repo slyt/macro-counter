@@ -46,3 +46,55 @@ class RecipePint(BaseModel):
     
     class Config:
         arbitrary_types_allowed = True
+
+class Nutrient(BaseModel):
+    nutrientId: int
+    nutrientName: str
+    nutrientNumber: str
+    unitName: str
+    derivationCode: str
+    derivationDescription: str
+    derivationId: int
+    value: float
+    foodNutrientSourceId: int
+    foodNutrientSourceCode: str
+    foodNutrientSourceDescription: str
+    rank: int
+    indentLevel: int
+    foodNutrientId: int
+    percentDailyValue: Optional[int] = None  # Optional since not all nutrients have this field
+
+class ProductDetails(BaseModel):
+    fdcId: int
+    description: str
+    dataType: str
+    gtinUpc: str
+    publishedDate: str
+    brandOwner: str
+    brandName: str
+    ingredients: str
+    marketCountry: str
+    foodCategory: str
+    modifiedDate: str
+    dataSource: str
+    packageWeight: str
+    servingSizeUnit: str
+    servingSize: float
+    householdServingFullText: str
+    tradeChannels: List[str]
+    allHighlightFields: str
+    score: float
+    microbes: List
+    foodNutrients: List[Nutrient]
+    finalFoodInputFoods: List
+    foodMeasures: List
+    foodAttributes: List
+    foodAttributeTypes: List
+    foodVersionIds: List
+    shortDescription: Optional[str] = None
+    commonNames: Optional[str] = None
+    additionalDescriptions: Optional[str] = None
+    foodCode: Optional[str] = None
+    foodCategoryId: Optional[str] = None
+    ndbNumber: Optional[str] = None
+    mostRecentAcquisitionDate: Optional[str] = None
