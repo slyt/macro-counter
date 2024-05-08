@@ -7,7 +7,7 @@ ureg = pint.UnitRegistry()
 class Ingredient(BaseModel):
     name: str
     quantity: float
-    unit: str # TODO: 
+    unit: str
 
 # Parses quantities using pint so that we can do math on the quantities
 # https://pint.readthedocs.io/en/stable/user/defining-quantities.html#using-string-parsing
@@ -33,7 +33,6 @@ class Recipe(BaseModel):
     ingredients: List[Ingredient]
     directions: List[str]
 
-    
 class RecipePint(BaseModel):
     name: str
     ingredients: List[IngredientPint] 

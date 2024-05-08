@@ -1,11 +1,20 @@
-from llama_cpp import Llama
+from recipe_parser import RecipeParser
 
-llm = Llama.create_chat_completion()
+parser = RecipeParser(
+    api_key="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", # this can be anything if using llama-cpp-python server
+    base_url="http://localhost:8080/v1", # url of the llama-cpp-python server, execute start_server.sh
+    model="function-calling" # see server_config.json for model alias
+)
 
-output = llm(
-      "Q: Name the planets in the solar system? A: ", # Prompt
-      max_tokens=32, # Generate up to 32 tokens, set to None to generate up to the end of the context window
-      stop=["Q:", "\n"], # Stop generating just before the model would generate a new question
-      echo=True # Echo the prompt back in the output
-) # Generate a completion, can also call create_completion
-print(output)
+recipe_url = "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/"
+recipe_text = parser.fetch_recipe(recipe_url)
+recipe = parser.create_completion(recipe_text)
+recipe = parser.convert_quantities(recipe) # convert to pint quantities
+
+print(f"# {recipe.name}")
+print("## Ingredients")
+for ingredient in recipe.ingredients:
+    print(f"- {ingredient.name}: {ingredient.quantity}")
+print("## Directions")
+for idx, direction in enumerate(recipe.directions):
+    print(f"{idx+1}. {direction}")
