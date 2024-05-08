@@ -3,6 +3,8 @@ import instructor
 import requests
 from bs4 import BeautifulSoup
 
+from pint import UnitRegistry
+ureg = UnitRegistry()
 import models
 
 MODEL = "function-calling"  # see server_config.json for model alias
@@ -45,7 +47,26 @@ recipe = client.chat.completions.create(
     ]
 )
 print(recipe.ingredients)
+print(recipe.directions)
+print("############")
+print(f"Parsed recipe {recipe.name} as Recipe pydantic model:")
+# loop through directions and print step and index too
+for idx, direction in enumerate(recipe.directions):
+    print(f"Step {idx+1}: {direction}")
 
 assert isinstance(recipe, models.Recipe)
+
+
+recipe_pint = models.RecipePint.from_recipe(recipe)
+assert isinstance(recipe_pint, models.RecipePint)
+print("############")
+print(f"Parsed recipe {recipe_pint.name} as RecipePint pydantic model:")
+# View ingredients with their pint quantities
+for ingredient in recipe_pint.ingredients:
+    print(ingredient)
+
+for idx, direction in enumerate(recipe_pint.directions):
+    print(f"Step {idx+1}: {direction}")
+
 
 
