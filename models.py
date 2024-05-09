@@ -1,8 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, field_serializer
 from typing import List, Optional
 
 import pint
 ureg = pint.UnitRegistry()
+
+
 
 class Ingredient(BaseModel):
     name: str
@@ -26,12 +28,18 @@ class IngredientPint(BaseModel):
         except pint.errors.UndefinedUnitError: # if unit is not defined, like 2 "eggs", convert it to dimensionless
             pint_quantity = ingredient.quantity * ureg.dimensionless
         return cls(name=ingredient.name, quantity=pint_quantity)
+    
+    @field_serializer('quantity', when_used="json")
+    def serialize_quantity(quantity: pint.Quantity): # converts quantity to string for JSON serialization
+        return str(quantity)
+    
 
 
 class Recipe(BaseModel):
     name: str
     ingredients: List[Ingredient]
     directions: List[str]
+
 
 class RecipePint(BaseModel):
     name: str
@@ -44,6 +52,11 @@ class RecipePint(BaseModel):
         ingredients_pint = [IngredientPint.from_ingredient(ing) for ing in recipe.ingredients]
         return cls(name=recipe.name, ingredients=ingredients_pint, directions=recipe.directions)
     
+
+    def save_to_json(self, filename: str): # Use pickle instead to retain the pint.Quantity objects
+        with open(filename, 'w') as f:
+            f.write(self.model_dump_json())
+
     class Config:
         arbitrary_types_allowed = True
 
