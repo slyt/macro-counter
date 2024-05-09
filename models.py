@@ -39,19 +39,22 @@ class Recipe(BaseModel):
     name: str
     ingredients: List[Ingredient]
     directions: List[str]
+    raw_text: str
+    raw_text_hash: str
 
 
 class RecipePint(BaseModel):
     name: str
     ingredients: List[IngredientPint] 
     directions: List[str]
+    raw_text: str
+    raw_text_hash: str
 
     # Conversion from Recipe to RecipePint
     @classmethod
     def from_recipe(cls, recipe: Recipe) -> 'RecipePint':
         ingredients_pint = [IngredientPint.from_ingredient(ing) for ing in recipe.ingredients]
-        return cls(name=recipe.name, ingredients=ingredients_pint, directions=recipe.directions)
-    
+        return cls(name=recipe.name, ingredients=ingredients_pint, directions=recipe.directions, raw_text=recipe.raw_text, raw_text_hash=recipe.raw_text_hash)
 
     def save_to_json(self, filename: str): # Use pickle instead to retain the pint.Quantity objects
         with open(filename, 'w') as f:

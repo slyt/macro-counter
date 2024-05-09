@@ -16,24 +16,23 @@ parser = RecipeParser(
 )
 
 recipe_url = "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/"
-recipe_text = parser.fetch_recipe(recipe_url)  # get recipe text from URL
-recipe = parser.create_completion(recipe_text) # convert string to Recipe object
-recipe = parser.convert_quantities(recipe)     # convert to quantities from string to pint.Quantity
+recipe = parser.recipe_from_url(recipe_url) # fetch recipe from URL and convert to RecipePint
 
 # save recipe in recipes directory so we don't need to fetch it every time
 recipe_name = recipe.name.replace(' ','_')
-with open(f"recipes/{recipe_name}.pkl", "wb") as output_file:
+print(f"Saving recipe `{recipe_name}` to recipes/{recipe.raw_text_hash}.pkl")
+with open(f"recipes/{recipe.raw_text_hash}.pkl", "wb") as output_file:
     pickle.dump(recipe, output_file)
 recipe=None
-with open(f"recipes/{recipe_name}.pkl", "rb") as input_file:
+recipe_hash = "a34b0caf0e411293c2b36b606fbf2627"
+with open(f"recipes/{recipe_hash}.pkl", "rb") as input_file:
     recipe = pickle.load(input_file)
 
+# Inspect the recipe to ensure it was loaded correctly
 print(f"# {recipe.name}")
 print("## Ingredients")
 for ingredient in recipe.ingredients:
     print(f"- {ingredient.name}: {ingredient.quantity}")
-
-
 
 # print("## Directions")
 # for idx, direction in enumerate(recipe.directions):
