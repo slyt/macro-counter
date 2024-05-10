@@ -2,6 +2,7 @@ import pint
 ureg = pint.UnitRegistry()
 
 # TODO: Double check all the numbers to make sure they are correct according to the Mifflin-St Jeor Equation
+# https://en.wikipedia.org/wiki/Basal_metabolic_rate
 
 gender = "male"
 age = 25 # years
@@ -22,7 +23,7 @@ print("#############################################")
 # Calculate the user's BMR using the Mifflin-St Jeor Equation
 bmr = 10 * weight.to(ureg.kg).magnitude + 6.25 * height.to(ureg.cm).magnitude - 5 * age + 5
 if gender == "female":
-    bmr = bmr - 161
+    bmr = bmr - 161 - 5
 
 print(f"Basal Metabolic Rate (BMR): {bmr} calories/day")
 
