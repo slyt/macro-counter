@@ -23,9 +23,10 @@ python main.py
 - [x] Parse recipes from the web
 - [x] Parse strings to pint quantities
 - [x] Add ability to cache recipes
+- [x] Calculate macro needs based on height, weight, age, gender
 - [ ] Add RecipeBook object that keeps track of cached recipes
 - [ ] Get macro values for each ingredient
-- [ ] Calculate macro needs based on height, weight, age and goals (loose weight, build muscle, maintain)
+- [ ] Adjust macros based on goals: lose weight, build muscle, maintain
 - [ ] Create meal plan for individual based on recipes and macro requirements
 - [ ] Create meal plan for groups of people
 - [ ] Create shopping list based meal plan
