@@ -68,39 +68,39 @@ class Nutrient(BaseModel):
     nutrientName: str
     nutrientNumber: str
     unitName: str
-    derivationCode: str
-    derivationDescription: str
-    derivationId: int
+    derivationCode: Optional[str] = None
+    derivationDescription: Optional[str] = None
+    derivationId: Optional[int] = None
     value: float
-    foodNutrientSourceId: int
-    foodNutrientSourceCode: str
-    foodNutrientSourceDescription: str
+    foodNutrientSourceId: Optional[int] = None
+    foodNutrientSourceCode: Optional[int] = None
+    foodNutrientSourceDescription: Optional[str] = None
     rank: int
     indentLevel: int
     foodNutrientId: int
     percentDailyValue: Optional[int] = None  # Optional since not all nutrients have this field
 
 class ProductDetails(BaseModel):
-    fdcId: int
-    description: str
-    dataType: str
-    gtinUpc: str
-    publishedDate: str
-    brandOwner: str
-    brandName: str
-    ingredients: str
-    marketCountry: str
+    fdcId: int # required
+    description: str # required
+    dataType: str # required
+    gtinUpc: Optional[str] = None
+    publishedDate: Optional[str] = None
+    brandOwner: Optional[str] = None
+    brandName: Optional[str] = None
+    ingredients: Optional[str] = None
+    marketCountry: Optional[str] = None
     foodCategory: str
-    modifiedDate: str
-    dataSource: str
-    packageWeight: str
-    servingSizeUnit: str
-    servingSize: float
-    householdServingFullText: str
-    tradeChannels: List[str]
-    allHighlightFields: str
-    score: float
-    microbes: List
+    modifiedDate: Optional[str] = None
+    dataSource: Optional[str] = None
+    packageWeight: Optional[str] = None
+    servingSizeUnit: Optional[str] = None
+    servingSize: Optional[float] = None
+    householdServingFullText: Optional[str] = None
+    tradeChannels: Optional[List[str]] = None
+    allHighlightFields: Optional[str] = None
+    score: Optional[float] = None
+    microbes: Optional[List] = None
     foodNutrients: List[Nutrient]
     finalFoodInputFoods: List
     foodMeasures: List
@@ -110,7 +110,7 @@ class ProductDetails(BaseModel):
     shortDescription: Optional[str] = None
     commonNames: Optional[str] = None
     additionalDescriptions: Optional[str] = None
-    foodCode: Optional[str] = None
-    foodCategoryId: Optional[str] = None
+    foodCode: Optional[int] = None
+    foodCategoryId: Optional[int] = None
     ndbNumber: Optional[str] = None
     mostRecentAcquisitionDate: Optional[str] = None
