@@ -24,6 +24,7 @@ python main.py
 - [x] Parse strings to pint quantities
 - [x] Add ability to cache recipes
 - [x] Calculate macro needs based on height, weight, age, gender
+- [ ] [Use JSON mode in instructor so llama-3 can be used](https://jxnl.github.io/instructor/blog/2024/03/07/open-source-local-structured-output-pydantic-json-openai/?h=ollama#llama-cpp-python)
 - [ ] Add RecipeBook object that keeps track of cached recipes
 - [ ] Get macro values for each ingredient
 - [ ] Adjust macros based on goals: lose weight, build muscle, maintain
