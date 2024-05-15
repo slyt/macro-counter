@@ -329,3 +329,4 @@ cython_debug/
 models/
 
 recipes/
+my_macros.py

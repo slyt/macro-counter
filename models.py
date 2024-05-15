@@ -60,11 +60,15 @@ class RecipePint(BaseModel):
         with open(filename, 'w') as f:
             f.write(self.model_dump_json())
 
+    def print_ingredients(self) -> None:
+        for ingredient in self.ingredients:
+            print(ingredient)
+
     class Config:
         arbitrary_types_allowed = True
 
 class Nutrient(BaseModel):
-    nutrientId: int
+    nutrientId: int 
     nutrientName: str
     nutrientNumber: str
     unitName: str
