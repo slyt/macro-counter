@@ -1,0 +1,580 @@
+{
+    "data": {
+        "product": {
+            "__typename": "Product",
+            "tcin": "84067786",
+            "category": {
+                "parent_category_id": "5xt13",
+                "name": "Peanut Butter & Jelly"
+            },
+            "collection_parents": [
+                {
+                    "tcin": "90574031",
+                    "title": "So Yummy by Bella Portable Blender Protein Pancakes"
+                }
+            ],
+            "ratings_and_reviews": {
+                "has_verified": true,
+                "statistics": {
+                    "not_recommended_count": 14,
+                    "question_count": 1,
+                    "rating": {
+                        "average": 4.64,
+                        "count": 793,
+                        "distribution": {
+                            "rating1": 22,
+                            "rating2": 12,
+                            "rating3": 39,
+                            "rating4": 86,
+                            "rating5": 634
+                        },
+                        "secondary_averages": [
+                            {
+                                "id": "Quality",
+                                "label": "quality",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.05
+                            },
+                            {
+                                "id": "Taste",
+                                "label": "taste",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.0
+                            },
+                            {
+                                "id": "Value",
+                                "label": "value",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.36
+                            }
+                        ]
+                    },
+                    "recommended_count": 36,
+                    "recommended_percentage": 72,
+                    "review_count": 51
+                },
+                "most_recent": [
+                    {
+                        "id": "743504a2-5418-4ae9-a365-80d6d495fa99",
+                        "text": "I loved the peanut taste the smoothness and really really like this one than Skippy and sorry Jiffy this one beats you now this will be my FAVE!!",
+                        "author": {
+                            "nickname": "Picky shopper",
+                            "external_id": "8004375866"
+                        },
+                        "title": "Yummy",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2024-06-01T18:51:40.251Z"
+                        }
+                    },
+                    {
+                        "id": "b6e850fd-b450-450a-a8de-503f460b04c1",
+                        "text": "I usually buy Skippy Natural, but thought I would give this one a try. Would buy again.",
+                        "author": {
+                            "nickname": "Targetista",
+                            "external_id": "10043250247"
+                        },
+                        "title": "For the price, not bad!",
+                        "rating": {
+                            "value": 4.0,
+                            "submitted_at": "2024-04-18T19:08:47.238Z"
+                        }
+                    },
+                    {
+                        "id": "0650c663-850f-453e-b62d-2d46fd8457ba",
+                        "text": "Protein peanut butter is good for your sandwiches",
+                        "author": {
+                            "nickname": "azsouthwest",
+                            "external_id": "10077384239"
+                        },
+                        "title": "Peanut butter protein",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2024-04-09T16:31:07.040Z"
+                        }
+                    },
+                    {
+                        "id": "cda06174-bab4-422b-94d8-25bd1123a7ef",
+                        "text": "It’s okay! It’s got a grainy texture that I’m not a fan of and it was way too thick. I think I’ll spend a little bit more and get name brand next time.",
+                        "author": {
+                            "nickname": "Jackie",
+                            "external_id": "1689591052"
+                        },
+                        "title": "Its alright",
+                        "rating": {
+                            "value": 3.0,
+                            "submitted_at": "2024-03-18T06:10:30.122Z"
+                        }
+                    },
+                    {
+                        "id": "1ac3052d-860f-41b7-a15e-30436d349060",
+                        "text": "Tastes good & good price",
+                        "author": {
+                            "nickname": "Bee",
+                            "external_id": "105203610"
+                        },
+                        "title": "Good peanut butter",
+                        "rating": {
+                            "value": 4.0,
+                            "submitted_at": "2024-03-13T15:12:13.981Z"
+                        }
+                    },
+                    {
+                        "id": "33515b48-d78c-4891-912d-d1851c204e8d",
+                        "text": "It is not good to eat this, when you exit the store. It is not travel food. Traveling food will not condition you to need a visit at a rest room or be high in mass for a difficult carry experience.",
+                        "author": {
+                            "nickname": "Snapple Apple",
+                            "external_id": "10068801616"
+                        },
+                        "title": "Good flavor but creates a need to visit rest room",
+                        "rating": {
+                            "value": 4.0,
+                            "submitted_at": "2024-02-20T15:34:11.668Z"
+                        }
+                    },
+                    {
+                        "id": "613a3e93-e560-4966-b171-3be3804e6829",
+                        "text": "I use this to make peanut butter cookies. They came out pretty yummy!",
+                        "author": {
+                            "nickname": "Ice chewer",
+                            "external_id": "7759203702"
+                        },
+                        "title": "Cookies!",
+                        "rating": {
+                            "value": 4.0,
+                            "submitted_at": "2024-02-05T06:24:11.171Z"
+                        }
+                    },
+                    {
+                        "id": "b05c01e3-fed5-459e-9dde-9bc4a9dcfe8a",
+                        "text": "I didn't know on how I'd like this type of peanut butter. I thought it's pretty good.",
+                        "author": {
+                            "external_id": "20032388176"
+                        },
+                        "title": "Peanut Butter Heaven",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2024-01-13T06:15:29.365Z"
+                        }
+                    }
+                ],
+                "photos": [
+                    "https://target.scene7.com/is/image/Target/GUEST_6504500d-e3c6-485c-9280-792180df5b0e"
+                ]
+            },
+            "financing_options": {
+                "channel": "DIGITAL",
+                "providers": [
+                    {
+                        "finance_minimum_loan_amount": 30.0,
+                        "finance_provider": "PayPal",
+                        "financing_terms_url": "https://www.paypal.com/credit-presentment/lander/modal?client_id=AZ_XI7q1Eg3_B6ho8bkB1B06juS0UYjNs0hXDrDbxu4GzhtTUOj0xhb8VB0KigC5pV0Qljr95-Kp8JKE&amount=0&currency=USD&buyer_country=US&offer=PAY_LATER_SHORT_TERM&integrationType=API",
+                        "financing_cell_header": "Pay in 4",
+                        "financing_cell_body": "Pay in 4 interest-free payments on purchases of $30-$1,500",
+                        "is_finance_eligible": true,
+                        "is_finance_message_eligible": true
+                    }
+                ]
+            },
+            "free_shipping": {
+                "enabled": false
+            },
+            "item": {
+                "parent_items": [
+                    {
+                        "__typename": "Item",
+                        "tcin": "90574031"
+                    }
+                ],
+                "cart_add_on_threshold": 35.0,
+                "compliance": {
+                    "is_proposition_65": false
+                },
+                "disclaimer": {
+                    "description": "Content on this site is for reference purposes only.  Target does not represent or warrant that the nutrition, ingredient, allergen and other product information on our Web or Mobile sites are accurate or complete, since this information comes from the product manufacturers.  On occasion, manufacturers may improve or change their product formulas and update their labels.  We recommend that you do not rely solely on the information presented on our Web or Mobile sites and that you review the product's label or contact the manufacturer directly if you have specific product concerns or questions.  If you have specific healthcare concerns or questions about the products displayed, please contact your licensed healthcare professional for advice or answers.  Any additional pictures are suggested servings only.",
+                    "type": "Grocery Disclaimer"
+                },
+                "dpci": "212-02-0778",
+                "eligibility_rules": {
+                    "add_on": {
+                        "is_active": true
+                    },
+                    "hold": {
+                        "is_active": true
+                    },
+                    "scheduled_delivery": {
+                        "is_active": true
+                    },
+                    "ship_to_guest": {
+                        "is_active": true
+                    }
+                },
+                "enrichment": {
+                    "buy_url": "https://www.target.com/p/creamy-peanut-butter-16oz-good-38-gather-8482/-/A-84067786",
+                    "images": {
+                        "base_url": "//target.scene7.com/is/image/Target/",
+                        "primary_image_url": "https://target.scene7.com/is/image/Target/GUEST_7dced407-a6b3-47df-8591-a19c78f3c487",
+                        "primary_image": "GUEST_7dced407-a6b3-47df-8591-a19c78f3c487",
+                        "alternate_images": [
+                            "GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623",
+                            "GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483"
+                        ],
+                        "alternate_image_urls": [
+                            "https://target.scene7.com/is/image/Target/GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623",
+                            "https://target.scene7.com/is/image/Target/GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483"
+                        ],
+                        "content_labels": [
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_7dced407-a6b3-47df-8591-a19c78f3c487"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623"
+                            }
+                        ]
+                    },
+                    "image_info": {
+                        "base_url": "//target.scene7.com/is/image/Target/",
+                        "primary_image": {
+                            "url": "https://target.scene7.com/is/image/Target/GUEST_7dced407-a6b3-47df-8591-a19c78f3c487",
+                            "image_name": "GUEST_7dced407-a6b3-47df-8591-a19c78f3c487"
+                        },
+                        "alternate_images": [
+                            {
+                                "url": "https://target.scene7.com/is/image/Target/GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623",
+                                "image_name": "GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623"
+                            },
+                            {
+                                "url": "https://target.scene7.com/is/image/Target/GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483",
+                                "image_name": "GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483"
+                            }
+                        ],
+                        "swatch_image": {},
+                        "content_labels": [
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_79adb81b-fdf7-4bc0-bc86-39c1749d7483",
+                                "shoppable_in_image": [
+                                    {
+                                        "tcin": "84067786"
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_7dced407-a6b3-47df-8591-a19c78f3c487",
+                                "shoppable_in_image": [
+                                    {
+                                        "tcin": "84067786"
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_b38b8aaf-e6d6-4f58-9f37-637d431e5623"
+                            }
+                        ]
+                    },
+                    "nutrition_facts": {
+                        "ingredients": "DRY ROASTED PEANUTS, SUGAR, CONTAINS 2% OR LESS OF HYDROGENATED VEGETABLE OILS (RAPESEED, COTTONSEED, SOYBEAN), MOLASSES, MONO AND DIGLYCERIDES, SALT. ",
+                        "nutrition_label_type_code": "LEGACY_FORMAT",
+                        "value_prepared_list": [
+                            {
+                                "description": "Amount/serving",
+                                "serving_size": "2",
+                                "serving_size_unit_of_measurement": "Tbsp",
+                                "servings_per_container": "14",
+                                "nutrients": [
+                                    {
+                                        "name": "Calories",
+                                        "quantity": 180.0,
+                                        "unit_of_measurement": "Cal"
+                                    },
+                                    {
+                                        "name": "Total Fat",
+                                        "percentage": 19.0,
+                                        "quantity": 15.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Saturated Fat",
+                                        "percentage": 13.0,
+                                        "quantity": 2.5,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Trans Fat",
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Cholesterol",
+                                        "percentage": 0.0,
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Sodium",
+                                        "percentage": 5.0,
+                                        "quantity": 125.0,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Total Carbohydrate",
+                                        "percentage": 3.0,
+                                        "quantity": 7.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Dietary Fiber",
+                                        "percentage": 7.0,
+                                        "quantity": 2.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Sugars",
+                                        "quantity": 3.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Added Sugars",
+                                        "percentage": 4.0,
+                                        "quantity": 2.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Protein",
+                                        "percentage": 7.0,
+                                        "quantity": 7.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Vitamin D",
+                                        "percentage": 0.0
+                                    },
+                                    {
+                                        "name": "Calcium",
+                                        "percentage": 2.0
+                                    },
+                                    {
+                                        "name": "Iron",
+                                        "percentage": 4.0
+                                    },
+                                    {
+                                        "name": "Potassium",
+                                        "percentage": 4.0
+                                    }
+                                ]
+                            }
+                        ],
+                        "warning": "CONTAINS PEANUT"
+                    },
+                    "return_policies": [
+                        {
+                            "user_type": "best_guest",
+                            "day_count": 365
+                        },
+                        {
+                            "user_type": "regular_guest",
+                            "day_count": 365
+                        }
+                    ]
+                },
+                "environmental_segmentation": {
+                    "is_hazardous_material": false
+                },
+                "formatted_return_method": "This item can be returned to any Target store or Target.com.",
+                "fulfillment": {
+                    "is_gift_wrap_eligible": true,
+                    "purchase_limit": 10
+                },
+                "handling": {
+                    "import_designation_description": "Made in the USA or Imported"
+                },
+                "is_limited_time_offer": false,
+                "merchandise_classification": {
+                    "class_id": 2,
+                    "department_id": 212,
+                    "department_name": "MEAL ESSENTIALS"
+                },
+                "package_dimensions": {
+                    "depth": 3.1,
+                    "dimension_unit_of_measure": "INCH",
+                    "height": 4.83,
+                    "weight": 40.0,
+                    "weight_unit_of_measure": "OUNCE",
+                    "width": 3.1
+                },
+                "primary_barcode": "085239276495",
+                "primary_brand": {
+                    "canonical_url": "/b/good-gather/-/N-yfqzk",
+                    "linking_id": "yfqzk",
+                    "name": "Good & Gather"
+                },
+                "product_classification": {
+                    "product_type": 109420,
+                    "product_type_name": "GROCERY",
+                    "purchase_behavior": "Frequency"
+                },
+                "product_description": {
+                    "bullet_descriptions": [
+                        "<B>Contains:</B> Peanuts",
+                        "<B>Consistency:</B> Creamy",
+                        "<B>State of Readiness:</B> Ready to Eat",
+                        "<B>Package Quantity:</B> 1",
+                        "<B>Net weight:</B> 16 Ounces"
+                    ],
+                    "downstream_description": "Whip up a batch of your famous peanut butter cookies or give a boost to your post-workout smoothie with this Creamy Peanut Butter from Good & Gather™. This classic-style peanut butter is smooth and creamy for easy spreading and mixing. Pair with your favorite jelly and type of bread to make a personalized PB&J sandwich, or mix with chocolate spread and add to your oatmeal for a warm, decadent treat. However you choose to enjoy it, you'll love the peanuty taste and creamy texture of this classic smooth peanut butter, as well as the 7 grams of protein this peanut butter provides in every serving.<br /><br />Every product that carries the Good & Gather™ name starts with quality ingredients that deliver great taste, making it easier for you and your family to eat well, every day. We promise you’ll love each bite, or your money back.",
+                    "soft_bullet_description": "&bull;Peanut butter is a classic go-to for sandwiches and snacking<br>&bull;Creamy peanut butter is easy to spread<br>&bull;Includes 7g of protein per serving; see nutrition information for fat content<br>&bull;No artificial colors, flavors, preservatives or sweeteners<br>&bull;No high fructose corn syrup",
+                    "soft_bullets": {
+                        "bullets": [
+                            "Peanut butter is a classic go-to for sandwiches and snacking",
+                            "Creamy peanut butter is easy to spread",
+                            "Includes 7g of protein per serving; see nutrition information for fat content",
+                            "No artificial colors, flavors, preservatives or sweeteners",
+                            "No high fructose corn syrup"
+                        ],
+                        "title": "highlights"
+                    },
+                    "title": "Creamy Peanut Butter - 16oz - Good &#38; Gather&#8482;"
+                },
+                "product_vendors": [
+                    {
+                        "id": "1338386",
+                        "vendor_name": "READY ROAST NUT COMPANY"
+                    },
+                    {
+                        "id": "1326822",
+                        "vendor_name": "HAMPTON FARMS"
+                    }
+                ],
+                "relationship_type_code": "CC",
+                "return_policies_guest_message": "This item must be returned within 365 days of the date it was purchased in store, shipped, delivered by a Shipt shopper, or made ready for pickup. If purchased online with SNAP EBT, this item must be returned within 90 days of the date it was shipped, delivered by a Shipt shopper, or made ready for pickup. This 90-day return window is required by SNAP.",
+                "ribbons": [
+                    "Only At Target"
+                ],
+                "wellness_merchandise_attributes": []
+            },
+            "finds_stories": [
+                {
+                    "id": "trends-snacks-on-the-go-charcuterie",
+                    "channel_id": "finds",
+                    "description": "A bento box & some snackable, packable goodies are all it takes to keep everyone happy when you hit the road.\n\n",
+                    "display_date": "June 7",
+                    "highlight_color": "#a8ecdf",
+                    "image": {
+                        "url": "https://target.scene7.com/is/image/Target/GUEST_89897be6-e92b-4e3c-95ab-c5fad4dccdb9",
+                        "alt_text": "Introducing your new favorite car snack: Car-cuterie. \n",
+                        "height": 0,
+                        "width": 0,
+                        "aspect_ratio": "1:1"
+                    },
+                    "images": [
+                        {
+                            "url": "https://target.scene7.com/is/image/Target/GUEST_89897be6-e92b-4e3c-95ab-c5fad4dccdb9",
+                            "alt_text": "Introducing your new favorite car snack: Car-cuterie. \n",
+                            "height": 0,
+                            "width": 0,
+                            "aspect_ratio": "1:1"
+                        }
+                    ],
+                    "label": "Trends",
+                    "name": "trends-snacks-on-the-go-charcuterie",
+                    "short_title": "Car-cuterie snack ideas",
+                    "title": "Introducing your new favorite car snack: Car-cuterie. \n",
+                    "url": "https://www.target.com/finds/stories/trends-snacks-on-the-go-charcuterie"
+                },
+                {
+                    "id": "trends-colorful-foods-collection",
+                    "channel_id": "finds",
+                    "description": "Add a dash of yum to your day with these candy-coated perfections.",
+                    "display_date": "August 21",
+                    "highlight_color": "#fda9b5",
+                    "image": {
+                        "url": "https://target.scene7.com/is/image/Target/GUEST_bee9cbf5-3258-4662-a1ed-891b4e703244",
+                        "alt_text": "Fun-of-a-kind M&M’S treats ﻿to sweeten the moment.",
+                        "height": 0,
+                        "width": 0,
+                        "aspect_ratio": "1:1"
+                    },
+                    "images": [
+                        {
+                            "url": "https://target.scene7.com/is/image/Target/GUEST_bee9cbf5-3258-4662-a1ed-891b4e703244",
+                            "alt_text": "Fun-of-a-kind M&M’S treats ﻿to sweeten the moment.",
+                            "height": 0,
+                            "width": 0,
+                            "aspect_ratio": "1:1"
+                        }
+                    ],
+                    "label": "Ideas",
+                    "name": "trends-colorful-foods-collection",
+                    "short_title": "Fun-of-a-kind M&M’S treats",
+                    "title": "Fun-of-a-kind M&M’S treats ﻿to sweeten the moment.",
+                    "url": "https://www.target.com/finds/stories/trends-colorful-foods-collection"
+                },
+                {
+                    "id": "ideas-after-school-snacks-collection",
+                    "channel_id": "finds",
+                    "description": "Prep for post-school snacking with easy, affordable & kiddo-approved ideas.",
+                    "display_date": "August 7",
+                    "highlight_color": "#fda9b5",
+                    "image": {
+                        "url": "https://target.scene7.com/is/image/Target/GUEST_a2f6ed7d-062b-4f80-b6f5-fbdcb1ebfed4",
+                        "alt_text": "Simple & tasty back-to-school bites under $5. ",
+                        "height": 0,
+                        "width": 0,
+                        "aspect_ratio": "1:1"
+                    },
+                    "images": [
+                        {
+                            "url": "https://target.scene7.com/is/image/Target/GUEST_a2f6ed7d-062b-4f80-b6f5-fbdcb1ebfed4",
+                            "alt_text": "Simple & tasty back-to-school bites under $5. ",
+                            "height": 0,
+                            "width": 0,
+                            "aspect_ratio": "1:1"
+                        }
+                    ],
+                    "label": "Ideas",
+                    "name": "ideas-after-school-snacks-collection",
+                    "short_title": "School snacks under $5. ",
+                    "title": "Simple & tasty back-to-school bites under $5. ",
+                    "url": "https://www.target.com/finds/stories/ideas-after-school-snacks-collection"
+                }
+            ],
+            "finds_posts": [
+                {
+                    "id": "rK3AvVxqfGLRgbWsHA75VC",
+                    "caption": "Little breakfast \uD83C\uDF1E\n• peanut butter on wheat bread ( cut into thick holdable slices for baby )\n• banana (cut to have a *handle* with the peel ) \n• Gerber lil snacks puffs/crunchies \n.\n\nDid you know you can introduce peanut butter to your baby between 4 & 6 months of age? If you have started puree + some solids and they haven't had any signs of allergic reaction, such as a rash or diarreah etc. You can get the OK from your pediatrition to start a bit of peanut butter? \uD83E\uDD0E Also check out these little infant plates fron Target! A set of 3 for $4\n.\n #8monthblw #8monthblwidea #blwideas #blwinspo #8months #babyledweaning #babyfood #baby #blwrecipes #banana #peanutbutter #gerber #gerbersnacks #blwbaby #Target #Targetfinds #Targetbaby #cloudisland #instafood #fingerfood #babyeats #babyfoodie #babyledeating #BLW #Targetmom #targetdeals",
+                    "url": "https://www.target.com/finds/posts/rK3AvVxqfGLRgbWsHA75VC",
+                    "placeholder_color": "#a17733",
+                    "user": {
+                        "display_name": "@alannasplate",
+                        "image_alt_text": "@alannasplate",
+                        "image_url": "https://edge.curalate.com/v1/img/NBhuquSqA95xCTwMOglawt_gXL8qjzd_8MKeYq-PY0U=/b/200",
+                        "url": "https://www.target.com/finds/posts?usernames=alannasplate",
+                        "username": "alannasplate"
+                    },
+                    "image": {
+                        "url": "https://edge.curalate.com/v1/img/0uGiTduyy5fKCDVCxEzELTv7_eudvR-RQC-iM3TyOsc=",
+                        "alt_text": "user image by @alannasplate, Divided Plate - 3pk - Cloud Island™",
+                        "height": 1440,
+                        "width": 1440,
+                        "aspect_ratio": "1:1"
+                    }
+                }
+            ],
+            "price": {
+                "current_retail": 1.99,
+                "formatted_current_price": "$1.99",
+                "formatted_current_price_type": "reg",
+                "formatted_unit_price": "$0.12",
+                "formatted_unit_price_suffix": "/ounce",
+                "reg_retail": 1.99,
+                "location_id": 926,
+                "external_system_id": "84067786-926-1.99-2024042417"
+            }
+        }
+    }
+}
