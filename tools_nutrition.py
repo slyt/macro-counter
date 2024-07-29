@@ -11,7 +11,7 @@ class BrmCalculator(BaseTool):
     gender_list: ClassVar[List[str]] = ["male", "female"] # TODO: Need more research about nutrition for non-binary people
 
     @validate_arguments
-    def _run(self, gender: str, age: int, weight: float, height: float) -> str:
+    def _run(self, gender: str, age: int, weight: Union[float, int], height: float) -> str:
         if gender not in self.gender_list:
             raise ValueError(f"Invalid gender: {gender}, must be one of {self.gender_list}")
         return self.calculate_bmr(gender, age, weight, height)
@@ -25,7 +25,7 @@ class BrmCalculator(BaseTool):
 
 class TDEECalculator(BaseTool):
     name: str = "Total Daily Energy Expenditure (TDEE) Calculator"
-    description: str = "This tool calculates the Total Daily Energy Expenditure (TDEE), in kcal, of a person based on their BMR and activity level"
+    description: str = "This tool calculates the Total Daily Energy Expenditure (TDEE), in kcal, of a person based on their BMR and activity level: sedentary, lightly_active, moderately_active, very_active, super_active"
 
     activity_multiplier_dict: ClassVar[Dict[str, float]] = {"sedentary": 1.2, "lightly_active": 1.375, "moderately_active": 1.55, "very_active": 1.725, "super_active": 1.9}
     activity_list: ClassVar[List[str]] = ["sedentary", "lightly_active", "moderately_active", "very_active", "super_active"]
@@ -44,7 +44,7 @@ class MacronutrientCalculator(BaseTool):
     name: str = "Macronutrient Calculator"
     description: str = "This tool calculates the macronutrient requirements (protein, fat, and carbs), in grams and calories, of a person based on their Total Daily Energy Expenditure (TDEE)"
 
-    def _run(self, tdee: int, weight: float) -> str:
+    def _run(self, tdee: int, weight: Union[float, int]) -> str:
         result_dict = self.calculate_macronutrients(tdee, weight)
         print(str(result_dict))
         return str(result_dict)

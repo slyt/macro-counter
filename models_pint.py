@@ -1,23 +1,74 @@
 from pydantic import BaseModel, field_serializer
 from typing import List, Optional
 
+import pint
+ureg = pint.UnitRegistry()
+
+
 
 class Ingredient(BaseModel):
     name: str
     quantity: float
     unit: str
 
+# Parses quantities using pint so that we can do math on the quantities
+# https://pint.readthedocs.io/en/stable/user/defining-quantities.html#using-string-parsing
+class IngredientPint(BaseModel):
+    name: str
+    quantity: pint.Quantity
+
+    class Config:
+        arbitrary_types_allowed = True
+
+    # Conversion from Ingredient to IngredientPint
+    @classmethod
+    def from_ingredient(cls, ingredient: Ingredient) -> 'IngredientPint':
+        try:
+            pint_quantity = ingredient.quantity * ureg(ingredient.unit) # e.g. 3.0 * ureg.tablespoon
+        except pint.errors.UndefinedUnitError: # if unit is not defined, like 2 "eggs", convert it to dimensionless
+            pint_quantity = ingredient.quantity * ureg.dimensionless
+        return cls(name=ingredient.name, quantity=pint_quantity)
+    
+    @field_serializer('quantity', when_used="json")
+    def serialize_quantity(quantity: pint.Quantity): # converts quantity to string for JSON serialization
+        return str(quantity)
+    
+
 
 class Recipe(BaseModel):
     name: str
     ingredients: List[Ingredient]
     directions: List[str]
-
+    # raw_text: str
+    # raw_text_hash: str
 
 class MealPlan(BaseModel):
     name: str
     recipes: List[Recipe]
 
+class RecipePint(BaseModel):
+    name: str
+    ingredients: List[IngredientPint] 
+    directions: List[str]
+    raw_text: str
+    raw_text_hash: str
+
+    # Conversion from Recipe to RecipePint
+    @classmethod
+    def from_recipe(cls, recipe: Recipe) -> 'RecipePint':
+        ingredients_pint = [IngredientPint.from_ingredient(ing) for ing in recipe.ingredients]
+        return cls(name=recipe.name, ingredients=ingredients_pint, directions=recipe.directions, raw_text=recipe.raw_text, raw_text_hash=recipe.raw_text_hash)
+
+    def save_to_json(self, filename: str): # Use pickle instead to retain the pint.Quantity objects
+        with open(filename, 'w') as f:
+            f.write(self.model_dump_json())
+
+    def print_ingredients(self) -> None:
+        for ingredient in self.ingredients:
+            print(ingredient)
+
+    class Config:
+        arbitrary_types_allowed = True
 
 class Nutrient(BaseModel):
     nutrientId: int 

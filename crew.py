@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from tools_nutrition import BrmCalculator, TDEECalculator, MacronutrientCalculator
 from langchain_ollama.llms import OllamaLLM
 from langchain_openai import OpenAI
+from models import Recipe, Ingredient
 load_dotenv()
 
 import os
@@ -34,6 +35,7 @@ recipe_writer = Agent(
   """,
   verbose=True,
   allow_delegation=False,
+  output_pydantic=Recipe,
   # You can pass an optional llm attribute specifying what model you wanna use.
   llm=llm
 )
@@ -44,7 +46,7 @@ nutritionist = Agent(
   backstory="""You are an exceptional nutritionist with years of experience in helping people achieve their health goals through balanced diets.
   You have a deep understanding of nutritional science and a passion for promoting healthy eating habits.
   You believe that food is medicine and that a well-balanced diet is essential for overall well-being.
-  activity level options are sedentary, lightly_active, moderately_active, very_active, super_active
+  You consult with the Client and gather information about their gender, age, weight, height, and activity level to calculate BMR and TDEE in order to give them information about their macronutrient requirements.
   """,
   verbose=True,
   llm= llm,
@@ -80,33 +82,56 @@ client = Agent(
 )
 
 
+
 # Create tasks for your agents
 
-task1 = Task(
-  description="""Consult with the Nutritionist to get a detailed analysis of your dietary requirements.""",
+consult_nutritionist = Task(
+  description="""Consult with the Nutritionist to get your daily macronutrient requirements based on your activity level, age, weight, gender, and height.""",
   expected_output="Full analysis report in bullet points",
   llm=llm,
   agent=client
 )
 
-task2 = Task(
-  description="""Create a small cookbook for the week that includes recipes for breakfast, lunch, and dinner. 
-  Focus on recipes that would be good for meal prepping. Adhere to the dietary requirements and preferences of the client.""",
-  expected_output="For each recipe, a complete list of ingredients, including amounts and measurements as well as step-by-step directions of how to prep and cook the ingredients.",
+create_breakfast_recipe = Task(
+  description="""Create a breakfast recipe for the Client that meets their macronutrient requirements (protein, fat, carbs, and overall Calories).""",
+  expected_output="A breakfast Recipe that meets the dietary requirements of the Client",
+  output_pydantic=Recipe,
   llm=llm,
   agent=recipe_writer,
-  context = [task1]
+  context = [consult_nutritionist] # prior context to reference
 )
 
-task3 = Task(
+create_lunch_recipe = Task(
+  description="""Create a lunch recipe for the Client that meets their macronutrient requirements (protein, fat, carbs, and overall Calories).""",
+  expected_output="A lunch Recipe that meets the dietary requirements of the Client",
+  output_pydantic=Recipe,
+  llm=llm,
+  agent=recipe_writer,
+  context = [consult_nutritionist] # prior context to reference
+)
+
+create_dinner_recipe = Task(
+  description="""Create a dinner recipe for the Client that meets their macronutrient requirements (protein, fat, carbs, and overall Calories).""",
+  expected_output="A dinner Recipe that meets the dietary requirements of the Client",
+  output_pydantic=Recipe,
+  llm=llm,
+  agent=recipe_writer,
+  context = [consult_nutritionist] # prior context to reference
+)
+
+create_grocery_list = Task(
     description="""Consult with the Grocery Shopper to get a detailed grocery list based on the recipes you received from the Recipe Writer.""",
     expected_output="Grocery list with items categorized by type and annotated by which recipe they are assocated with",
     llm=llm,
     agent=client,
-    context = [task2]
+    context = [create_breakfast_recipe, create_dinner_recipe, create_lunch_recipe]
     )
 
-tasks = [task1, task2, task3]
+tasks = [consult_nutritionist, 
+         create_breakfast_recipe,
+         create_lunch_recipe,
+         create_dinner_recipe,
+         create_grocery_list]
 
 # Instantiate your crew with a sequential process
 crew = Crew(
@@ -114,6 +139,7 @@ crew = Crew(
   tasks=tasks,
   verbose=2, # You can set it to 1 or 2 to different logging levels
   llm=llm,
+  max_rpm=3, # Maximum Rounds Per Message for the crew
   process = Process.sequential,
   memory=True # Uses embeddings to store the short-term memory of the crew
 )
@@ -146,6 +172,9 @@ for i,task in enumerate(tasks):
             json.dump(task_output.json_dict, f, indent=2)
     if task_output.pydantic:
         print(f"Pydantic Output: {task_output.pydantic}")
+        # save pydantic output as JSON to file
+        with open(f"{task_output_directory}/task_{i}_output_pydantic.json", "w") as f:
+            json.dump(task_output.pydantic.model_dump_json(), f, indent=2)
 
 print("######################")
 print(result)
