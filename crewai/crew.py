@@ -9,14 +9,16 @@ from langchain_openai import OpenAI
 from models import Recipe, Ingredient
 load_dotenv()
 
-import os
-os.environ['OPENAI_MODEL_NAME'] = 'gpt-4o-mini'
+# Use for OpenAI Models
+# assumes OPENAI_API_KEY environment variable is set
+# import os
+# os.environ['OPENAI_MODEL_NAME'] = 'gpt-4o-mini'
+# llm = OpenAI()
 
-llm = OpenAI()
-
-# llm = OllamaLLM(
-#     model = "llama3.1",
-#     base_url = "http://localhost:11434")
+# Use for locally running ollama models
+llm = OllamaLLM(
+    model = "granite3-dense:8b-instruct-q8_0",
+    base_url = "http://localhost:11434")
 
 
 
@@ -25,7 +27,7 @@ brm_calculator = BrmCalculator()
 tdee_calculator = TDEECalculator()
 macronutrient_calculator = MacronutrientCalculator()
 
-# Define your agents with roles and goals
+#Define your agents with roles and goals
 recipe_writer = Agent(
   role='Recipe Writer',
   goal='Write recipes that adhere to the dietary requirements and preferences of the target audience',
